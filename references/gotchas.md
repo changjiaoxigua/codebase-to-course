@@ -1,32 +1,41 @@
-# Gotchas — Common Failure Points
+# 常见陷阱 — 常见故障点
 
-> **When to read this:** During Phase 3 (writing module HTML) and Phase 4 (review). Check every one of these before considering a course complete.
+> **何时阅读：** 在阶段 3（编写模块 HTML）和阶段 4（审查）期间。在认为课程完成之前检查每一个问题。
 
-These are real problems encountered when building courses. Check every one before considering a course complete.
+这些是构建课程时遇到的真实问题。在认为课程完成之前检查每一个问题。
 
-### Tooltip Clipping
-Translation blocks use `overflow: hidden` for code wrapping. If tooltips use `position: absolute` inside the term element, they get clipped by the container. **Fix:** Tooltips must use `position: fixed` and be appended to `document.body`. Calculate position from `getBoundingClientRect()`. This is already handled by `main.js` but is the #1 bug that appears in every build.
+### 工具提示裁剪
 
-### Not Enough Tooltips
-The most common failure is under-tooltipping. Non-technical learners don't know terms like REPL, JSON, flag, entry point, PATH, pip, namespace, function, class, module, PR, E2E, or even software names like Blender/GIMP. **Rule of thumb:** if a term wouldn't appear in everyday conversation with a non-technical friend, tooltip it. Err heavily on the side of too many. BUT: don't tooltip terms the user already knows well from their domain (e.g., AI/ML concepts for someone in AI).
+翻译块使用 `overflow: hidden` 进行代码换行。如果工具提示在术语元素内使用 `position: absolute`，它们会被容器裁剪。**修复：** 工具提示必须使用 `position: fixed` 并附加到 `document.body`。从 `getBoundingClientRect()` 计算位置。这已经由 `main.js` 处理，但这是每个构建中都会出现的头号错误。
 
-### Walls of Text
-The course looks like a textbook instead of an infographic. This happens when you write more than 2-3 sentences in a row without a visual break. Every screen must be at least 50% visual. Convert any list of 3+ items into cards, any sequence into step cards or flow diagrams, any code explanation into a code↔English translation block.
+### 工具提示不足
 
-### Recycled Metaphors
-Using "restaurant" or "kitchen" for everything. Every module needs its own metaphor that feels inevitable for that specific concept. If you catch yourself reaching for the same metaphor twice, stop and find one that fits the concept organically.
+最常见的失败是工具提示不足。非技术学习者不知道 REPL、JSON、标志、入口点、PATH、pip、命名空间、函数、类、模块、PR、E2E 等术语，甚至 Blender/GIMP 等软件名称。**经验法则：** 如果一个术语不会在与非技术朋友的日常对话中出现，给它加工具提示。严重倾向于太多。但是：不要为用户已经从其领域熟知的术语加工具提示（例如，AI 领域的人对 AI/ML 概念）。
 
-### Code Modifications
-Trimming, simplifying, or "cleaning up" code snippets from the codebase. The learner should be able to open the real file and see the exact same code. Instead of editing code to be shorter, *choose* naturally short snippets (5-10 lines) from the codebase that illustrate the point.
+### 文字墙
 
-### Quiz Questions That Test Memory
-Asking "What does API stand for?" or "Which file handles X?" — those test recall, not understanding. Every quiz question should present a new scenario the learner hasn't seen and ask them to *apply* what they learned.
+课程看起来像教科书而不是信息图表。当你连续写超过 2-3 个句子而没有视觉中断时就会发生这种情况。每个屏幕必须至少 50% 是视觉内容。将任何 3+ 项的列表转换为卡片，任何序列转换为步骤卡片或流程图，任何代码解释转换为代码↔英语翻译块。
 
-### Scroll-Snap Mandatory
-Using `scroll-snap-type: y mandatory` traps users inside long modules. Always use `proximity`.
+### 重复使用的隐喻
 
-### Module Quality Degradation
-Trying to write all modules in one pass causes later modules to be thin and rushed. Build one module at a time and verify each before moving on. For complex codebases, use the parallel path with module briefs.
+对所有内容使用"餐厅"或"厨房"。每个模块都需要自己的隐喻，感觉对该特定概念是不可避免的。如果你发现自己在两次使用相同的隐喻，停下来找一个有机地适合概念的隐喻。
 
-### Missing Interactive Elements
-A module with only text and code blocks, no interactivity. Every module needs at least one of: quiz, data flow animation, group chat, architecture diagram, drag-and-drop. These aren't decorations — they're how non-technical learners actually process information.
+### 代码修改
+
+修剪、简化或"清理"代码库中的代码片段。学习者应该能够打开真实文件并看到完全相同的代码。不要编辑代码使其更短，而是从代码库中*选择*自然简短的片段（5-10 行），能够很好地说明要点。
+
+### 测试记忆的测验问题
+
+问"API 代表什么？"或"哪个文件处理 X？" — 那些测试回忆，而不是理解。每个测验问题都应该展示学习者未见过的全新情况，并要求他们*应用*所学内容。
+
+### 滚动捕捉强制
+
+使用 `scroll-snap-type: y mandatory` 会将用户困在长模块内。始终使用 `proximity`。
+
+### 模块质量下降
+
+试图一次性编写所有模块会导致后面的模块薄弱和匆忙。一次构建一个模块并在继续之前验证每个模块。对于复杂代码库，使用带有模块简介的并行路径。
+
+### 缺少交互元素
+
+只有文本和代码块的模块，没有交互性。每个模块都需要至少以下之一：测验、数据流动画、群聊、架构图、拖放。这些不是装饰 — 它们是非技术学习者实际处理信息的方式。

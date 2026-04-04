@@ -1,49 +1,49 @@
-# Module Brief Template
+# 模块简介模板
 
-> **When to read this:** During Phase 2.5 (planning checkpoint) for complex codebases. Fill in one brief per module, save to `course-name/briefs/0N-slug.md`. Each brief gives a parallel agent everything it needs to write one module without reading the codebase or SKILL.md.
+> **何时阅读：** 在阶段 2.5（规划检查点）期间，针对复杂代码库。为每个模块填写一个简介，保存到 `course-name/briefs/0N-slug.md`。每个简介为并行代理提供编写一个模块所需的一切，无需阅读代码库或 SKILL.md。
 
 ---
 
-## Module N: [Title]
+## 模块 N：[标题]
 
-### Teaching Arc
-- **Metaphor:** [A fresh, specific metaphor — never "restaurant." See `references/content-philosophy.md` > Metaphors First]
-- **Opening hook:** [1 sentence that connects to something the learner already knows from using the app]
-- **Key insight:** [The one thing the learner should walk away understanding]
-- **"Why should I care?":** [How this helps them steer AI / debug / make decisions]
+### 教学弧线
+- **隐喻：** [一个新鲜的、特定的隐喻 — 永远不要"餐厅"。参见 `references/content-philosophy.md` > 隐喻优先]
+- **开场钩子：** [1 句话，连接到学习者已经从使用应用程序中知道的内容]
+- **关键洞察：** [学习者应该理解的一件事]
+- **"为什么我应该关心？"：** [这如何帮助他们指导 AI / 调试 / 做决策]
 
-### Code Snippets (pre-extracted)
+### 代码片段（预提取）
 
-Include the actual code the module will use in code↔English translation blocks. Copy-paste from the codebase with file path and line numbers. The writing agent will use these verbatim — it will NOT re-read the codebase.
+包含模块将在代码↔英语翻译块中使用的实际代码。从代码库复制粘贴，带有文件路径和行号。编写代理将逐字使用这些 — 它不会重新阅读代码库。
 
-File: src/example/file.ts (lines 12-24)
-[paste actual code here]
+文件： src/example/file.ts（第 12-24 行）
+[在此粘贴实际代码]
 
-File: src/another/file.ts (lines 45-52)
-[paste actual code here]
+文件： src/another/file.ts（第 45-52 行）
+[在此粘贴实际代码]
 
-### Interactive Elements
+### 交互元素
 
-Check which elements this module needs. Include enough detail for the writing agent to build them.
+检查此模块需要哪些元素。包含足够的细节供编写代理构建它们。
 
-- [ ] **Code↔English translation** — which snippet(s) from above
-- [ ] **Quiz** — [number] questions, style: [scenario / debugging / architecture / tracing]. Brief description of each question's angle.
-- [ ] **Group chat animation** — actors: [list]. Message flow summary: [who says what to whom, in what order]
-- [ ] **Data flow animation** — actors: [list]. Steps: [sequence of highlights and packet movements]
-- [ ] **Drag-and-drop** — items: [list], targets: [list]
-- [ ] **Other** — [architecture diagram, layer toggle, pattern cards, etc.]
+- [ ] **代码↔英语翻译** — 上面的哪些片段
+- [ ] **测验** — [数量] 个问题，风格：[场景 / 调试 / 架构 / 跟踪]。每个问题角度的简要描述。
+- [ ] **群聊动画** — 角色：[列表]。消息流摘要：[谁对谁说什么，按什么顺序]
+- [ ] **数据流动画** — 角色：[列表]。步骤：[高亮和数据包移动的序列]
+- [ ] **拖放** — 项目：[列表]，目标：[列表]
+- [ ] **其他** — [架构图、层切换、模式卡片等]
 
-### Reference Files to Read
+### 要阅读的参考文件
 
-List only the sections the writing agent needs — not the whole file.
+仅列出编写代理需要的部分 — 不是整个文件。
 
-- `references/interactive-elements.md` → [section names, e.g., "Multiple-Choice Quizzes", "Group Chat Animation"]
-- `references/design-system.md` → [only if needed for specific tokens not in the brief]
-- `references/content-philosophy.md` → [always include — agent needs content rules]
-- `references/gotchas.md` → [always include — agent needs the checklist]
+- `references/interactive-elements.md` → [部分名称，例如，"多选测验"、"群聊动画"]
+- `references/design-system.md` → [仅当简介中需要特定令牌时]
+- `references/content-philosophy.md` → [始终包含 — 代理需要内容规则]
+- `references/gotchas.md` → [始终包含 — 代理需要检查清单]
 
-### Connections
+### 连接
 
-- **Previous module:** [Title — what it covered, so this module can build on it]
-- **Next module:** [Title — what it will cover, so this module can set it up]
-- **Tone/style notes:** [Any course-wide consistency notes: accent color name, actor naming convention, etc.]
+- **上一个模块：** [标题 — 它涵盖了什么，以便此模块可以在此基础上构建]
+- **下一个模块：** [标题 — 它将涵盖什么，以便此模块可以为其做准备]
+- **语气/风格说明：** [任何课程范围的一致性说明：强调色名称、角色命名约定等]

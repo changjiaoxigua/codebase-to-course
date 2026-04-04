@@ -1,89 +1,96 @@
-# Content Philosophy
+# 内容哲学
 
-> **When to read this:** During Phase 2.5 (writing module briefs) and Phase 3 (writing module HTML). These principles guide every content decision — what to show, how to explain it, and how to test understanding.
+> **何时阅读：** 在阶段 2.5（编写模块简介）和阶段 3（编写模块 HTML）期间。这些原则指导每个内容决策 — 展示什么、如何解释以及如何测试理解。
 
-These principles are what separate a great course from a generic tutorial. They should guide every content decision:
+这些原则是区分优秀课程和普通教程的关键。它们应该指导每个内容决策：
 
-### Show, Don't Tell — Aggressively Visual
-People's eyes glaze over text blocks. The course should feel closer to an infographic than a textbook. Follow these hard rules:
+### 展示，而非讲述 — 极致可视化
 
-**Text limits:**
-- Max **2-3 sentences** per text block. If you're writing a fourth sentence, stop and convert it into a visual instead.
-- No text block should ever be wider than the content width AND taller than ~4 lines. If it is, break it up with a visual element.
-- Every screen must be **at least 50% visual** (diagrams, code blocks, cards, animations, badges — anything that isn't a paragraph).
+人们的眼睛会对文本块感到厌倦。课程应该感觉更像信息图表而不是教科书。遵循这些硬性规则：
 
-**Convert text to visuals:**
-- A list of 3+ items → **cards with icons** (pattern cards, feature cards)
-- A sequence of steps → **flow diagram with arrows** or **numbered step cards**
-- "Component A talks to Component B" → **animated data flow** or **group chat visualization**
-- "This file does X, that file does Y" → **visual file tree with annotations** or **icon + one-liner badges**
-- Explaining what code does → **code↔English translation block** (not a paragraph *about* the code)
-- Comparing two approaches → **side-by-side columns** with visual contrast
+**文本限制：**
+- 每个文本块最多 **2-3 个句子**。如果你正在写第四个句子，停下来并将其转换为视觉元素。
+- 任何文本块的宽度都不应超过内容宽度且高度超过约 4 行。如果是，用视觉元素将其分解。
+- 每个屏幕必须**至少 50% 是视觉内容**（图表、代码块、卡片、动画、徽章 — 任何不是段落的东西）。
 
-**Visual breathing room:**
-- Use generous spacing between elements (`--space-8` to `--space-12` between sections)
-- Alternate between full-width visuals and narrow text blocks to create rhythm
-- Every module should have at least one "hero visual" — a diagram, animation, or interactive element that dominates the screen and teaches the core concept at a glance
+**将文本转换为视觉元素：**
+- 3+ 项的列表 → **带图标的卡片**（模式卡片、功能卡片）
+- 步骤序列 → **带箭头的流程图**或**编号步骤卡片**
+- "组件 A 与组件 B 通信" → **动画数据流**或**群聊可视化**
+- "这个文件做 X，那个文件做 Y" → **带注释的可视化文件树**或**图标 + 单行徽章**
+- 解释代码的作用 → **代码↔英语翻译块**（不是关于代码的段落）
+- 比较两种方法 → **并排列**，具有视觉对比
 
-### Code ↔ English Translations
-Every code snippet gets a side-by-side plain English translation. Left panel: real code from the project with syntax highlighting. Right panel: line-by-line plain English explaining what each line does. This is the single most valuable teaching tool for non-technical learners.
+**视觉呼吸空间：**
+- 在元素之间使用慷慨的间距（部分之间使用 `--space-8` 到 `--space-12`）
+- 在全宽视觉元素和窄文本块之间交替，以创造节奏
+- 每个模块应该至少有一个"英雄视觉元素" — 一个图表、动画或交互元素，主导屏幕并一目了然地教授核心概念
 
-**Critical: No horizontal scrollbars on code.** All code must use `white-space: pre-wrap` so it wraps instead of scrolling. This is a course for non-technical people, not an IDE — readability beats preserving indentation structure.
+### 代码 ↔ 英语翻译
 
-**Critical: Use original code exactly as-is.** Never modify, simplify, or trim code snippets from the codebase. The learner should be able to open the real file and see the exact same code they learned from — that builds trust. Instead of editing code to make it shorter, *choose* naturally short, punchy snippets (5-10 lines) from the codebase that illustrate the concept well. Every codebase has compact, self-contained moments — find those rather than butchering longer functions.
+每个代码片段都会获得并排的通俗英语翻译。左侧面板：项目中带有语法高亮的真实代码。右侧面板：逐行通俗英语，解释每行代码的作用。这是非技术学习者最有价值的教学工具。
 
-### One Concept Per Screen
-No walls of text. Each screen within a module teaches exactly one idea. If you need more space, add another screen — don't cram.
+**关键：代码块上不要有水平滚动条。** 所有代码必须使用 `white-space: pre-wrap`，以便它换行而不是滚动。这是为非技术人员设计的课程，不是 IDE — 可读性胜过保留缩进结构。
 
-### Metaphors First, Then Reality
-Introduce every new concept with a metaphor from everyday life. Then immediately ground it: "In our code, this looks like..." The metaphor builds intuition; the code grounds it in reality.
+**关键：完全按原样使用原始代码。** 永远不要修改、简化或修剪代码库中的代码片段。学习者应该能够打开真实文件并看到他们学到的完全相同的代码 — 这建立了信任。不要编辑代码使其更短，而是从代码库中*选择*自然简短、有力的片段（5-10 行），能够很好地说明概念。每个代码库都有紧凑、自包含的时刻 — 找到那些而不是破坏较长的函数。
 
-**Critical: No recycled metaphors.** Do NOT default to "restaurant" for everything — that's the #1 crutch. Each concept deserves its own metaphor that feels natural to *that specific idea*. A database is a library with a card catalog. Auth is a bouncer checking IDs. An event loop is an air traffic controller. Message passing is a postal system. API rate limiting is a nightclub with a capacity limit. Pick the metaphor that makes the concept click, not the one that's easiest to reach for. If you catch yourself using "restaurant" or "kitchen" more than once in a course, stop and rethink.
+### 每个屏幕一个概念
 
-### Learn by Tracing
-Follow what actually happens when the learner does something they already do every day in the app — trace the data flow end-to-end. "You know that button you click? Here's the journey your data takes after you click it..." This works because the learner has *already experienced the result* — now they're seeing the machinery behind it. It's like watching a behind-the-scenes documentary of a movie you loved.
+不要有文字墙。模块内的每个屏幕只教授一个想法。如果你需要更多空间，添加另一个屏幕 — 不要塞满。
 
-### Make It Memorable
-Use "aha!" callout boxes for universal CS insights. Use humor where natural (not forced). Give components personality — they're "characters" in a story, not abstract boxes on a diagram.
+### 隐喻优先，然后是现实
 
-### Glossary Tooltips — No Term Left Behind
-Every technical term (API, DOM, callback, middleware, etc.) gets a dashed-underline tooltip on first use in each module. Hover on desktop or tap on mobile to see a 1-2 sentence plain-English definition. The learner should never have to leave the page to Google a term. This is the difference between a course that *says* it's for non-technical people and one that actually *is*.
+用日常生活中的隐喻介绍每个新概念。然后立即落实："在我们的代码中，这看起来像..."隐喻建立直觉；代码将其落实在现实中。
 
-**Be extremely aggressive with tooltips.** If there is even a 1% chance a non-technical person doesn't know a word, tooltip it. This includes:
-- Software names they might not know (Blender, GIMP, Audacity, etc.)
-- Everyday developer terms (REPL, JSON, flag, CLI, API, SDK, etc.)
-- Programming concepts (function, variable, dictionary, class, module, etc.)
-- Infrastructure terms (PATH, pip, namespace, entry point, etc.)
-- Acronyms — ALWAYS tooltip acronyms on first use
+**关键：不要重复使用隐喻。** 不要对所有内容默认使用"餐厅" — 这是第一号拐杖。每个概念都应该有自己的隐喻，感觉自然适合*那个特定的想法*。数据库是带有卡片目录的图书馆。身份验证是检查身份证的保镖。事件循环是空中交通管制员。消息传递是邮政系统。API 速率限制是有容量限制的夜总会。选择让概念豁然开朗的隐喻，而不是最容易伸手可得的。如果你发现自己在课程中不止一次使用"餐厅"或"厨房"，停下来重新思考。
 
-**The vocabulary IS the learning.** One of the key goals is for learners to acquire the precise technical vocabulary they need to communicate with AI coding agents. Each tooltip should teach the term in a way that helps the learner USE it in their own instructions — e.g., "A **flag** is an option you add to a command to change its behavior — like adding '--json' to get structured data instead of plain text. When talking to AI, you'd say 'add a flag for verbose output.'"
+### 通过跟踪学习
 
-**Cursor:** Use `cursor: pointer` on terms (not `cursor: help`). The question-mark cursor feels clinical — a pointer feels clickable and inviting.
+跟随学习者在应用程序中每天实际做的事情 — 端到端跟踪数据流。"你知道你点击的那个按钮吗？这是你点击后数据所经历的旅程..."这之所以有效，是因为学习者已经*体验过结果* — 现在他们正在看到背后的机制。这就像观看你喜爱的电影的幕后纪录片。
 
-**Tooltip overflow fix:** Translation blocks and other containers with `overflow: hidden` will clip tooltips. To fix this, the tooltip JS must use `position: fixed` and calculate coordinates from `getBoundingClientRect()` instead of relying on CSS `position: absolute` within the container. Append tooltips to `document.body` rather than inside the term element. This ensures tooltips are never clipped by any ancestor's overflow.
+### 让它令人难忘
 
-### Quizzes That Test Application, Not Memory
+使用"顿悟！"标注框展示普遍的计算机科学洞察。在自然的地方使用幽默（不要强行）。赋予组件个性 — 它们是故事中的"角色"，而不是图表上的抽象框。
 
-The goal of learning is practical application — being able to *do something* with what you learned. Quizzes should test whether the learner can use their knowledge to solve a new problem, not whether they can regurgitate a definition.
+### 术语表工具提示 — 不遗漏任何术语
 
-**What to quiz (in order of value):**
-1. **"What would you do?" scenarios** — Present a new situation the learner hasn't seen and ask them to apply what they learned. e.g., "You want to add a 'save to favorites' feature. Which files would you need to change?" This is the gold standard.
-2. **Debugging scenarios** — "A user reports X is broken. Based on what you learned, where would you look first?" This tests whether they understood the architecture, not just memorized file names.
-3. **Architecture decisions** — "You're building a similar app from scratch. Would you put this logic in the frontend or backend? Why?" Tests whether they understood the *reasoning* behind design choices.
-4. **Tracing exercises** — "When a user does X, trace the path the data takes." Tests whether they can follow the flow.
+每个技术术语（API、DOM、回调、中间件等）在每个模块首次使用时都会获得虚线下划线工具提示。桌面端悬停或移动端点击可查看 1-2 句通俗英语定义。学习者永远不必离开页面去谷歌一个术语。这是区分*说*是为非技术人员设计的课程和*实际上*是为非技术人员设计的课程的关键。
 
-**What NOT to quiz:**
-- Definitions ("What does API stand for?") — that's what the glossary tooltips are for
-- File name recall ("Which file handles X?") — nobody memorizes file names
-- Syntax details ("What's the correct way to write a fetch call?") — this isn't a coding bootcamp
-- Anything that can be answered by scrolling up and copying — that tests scrolling, not understanding
+**对工具提示极其积极。** 如果非技术人员有哪怕 1% 的可能性不知道一个词，就给它加工具提示。这包括：
+- 他们可能不知道的软件名称（Blender、GIMP、Audacity 等）
+- 日常开发者术语（REPL、JSON、标志、CLI、API、SDK 等）
+- 编程概念（函数、变量、字典、类、模块等）
+- 基础设施术语（PATH、pip、命名空间、入口点等）
+- 首字母缩写 — 始终为首次使用的首字母缩写添加工具提示
 
-**Quiz tone:**
-- Wrong answers get encouraging, non-judgmental explanations ("Not quite — here's why...")
-- Correct answers get brief reinforcement of the underlying principle ("Exactly! This works because...")
-- Never punitive, never score-focused. No "You got 3/5!" — the quiz is a thinking exercise, not an exam
-- Wrong answer explanations should teach something new, not just say "wrong, the answer was B"
+**词汇就是学习。** 关键目标之一是让学习者获得他们需要的精确技术词汇，以便与 AI 编码代理沟通。每个工具提示都应该以一种帮助学习者在自己的指令中*使用*它的方式教授术语 — 例如，"**标志（flag）**是添加到命令以更改其行为的选项 — 就像添加 '--json' 以获取结构化数据而不是纯文本。与 AI 交谈时，你会说'为详细输出添加一个标志。'"
 
-**How many quizzes:** One per module, placed at the end after the learner has seen all the content. 3-5 questions per quiz. Each question should make the learner pause and *think*, not just pick the obvious answer.
+**光标：** 在术语上使用 `cursor: pointer`（不是 `cursor: help`）。问号光标感觉临床 — 指针感觉可点击且诱人。
 
-**Deciding what concepts are worth quizzing:** Quiz the things that would actually help someone in practice — architecture understanding ("where does this logic live and why?"), debugging intuition ("what would cause this symptom?"), and decision-making ("what's the tradeoff here?"). If a concept won't help someone debug a problem, steer an AI assistant, or make an architectural decision, it's not worth quizzing.
+**工具提示溢出修复：** 带有 `overflow: hidden` 的翻译块和其他容器会裁剪工具提示。要解决此问题，工具提示 JS 必须使用 `position: fixed` 并从 `getBoundingClientRect()` 计算坐标，而不是依赖容器内的 CSS `position: absolute`。将工具提示附加到 `document.body` 而不是术语元素内部。这确保工具提示永远不会被任何祖先的溢出裁剪。
+
+### 测试应用而非记忆的测验
+
+学习的目标是实际应用 — 能够用你学到的东西*做某事*。测验应该测试学习者是否可以使用他们的知识解决新问题，而不是他们能否背诵定义。
+
+**测验什么（按价值排序）：**
+1. **"你会怎么做？"场景** — 展示学习者未见过的全新情况，要求他们应用所学内容。例如，"你想添加'保存到收藏夹'功能。你需要更改哪些文件？"这是黄金标准。
+2. **调试场景** — "用户报告 X 损坏了。根据你学到的内容，你会先看哪里？"这测试他们是否理解了架构，而不仅仅是记住了文件名。
+3. **架构决策** — "你正在从头开始构建类似的应用。你会把这个逻辑放在前端还是后端？为什么？"测试他们是否理解设计选择背后的*推理*。
+4. **跟踪练习** — "当用户做 X 时，跟踪数据所经过的路径。"测试他们是否能够跟随流程。
+
+**不要测验什么：**
+- 定义（"API 代表什么？"） — 那是术语表工具提示的用途
+- 文件名回忆（"哪个文件处理 X？"） — 没有人记住文件名
+- 语法细节（"编写 fetch 调用的正确方法是什么？"） — 这不是编程训练营
+- 任何可以通过向上滚动和复制来回答的内容 — 那测试的是滚动，而不是理解
+
+**测验语气：**
+- 错误答案获得鼓励性、非评判性的解释（"不太对 — 这是为什么..."）
+- 正确答案获得对基本原则的简要强化（"完全正确！这之所以有效是因为..."）
+- 永远不要惩罚性，永远不要关注分数。不要"你得了 3/5！" — 测验是思维练习，不是考试
+- 错误答案解释应该教授新东西，而不仅仅是说"错了，答案是 B"
+
+**多少测验：** 每个模块一个，放在学习者看完所有内容后的末尾。每个测验 3-5 个问题。每个问题都应该让学习者停下来*思考*，而不仅仅是选择显而易见的答案。
+
+**决定哪些概念值得测验：** 测验那些实际上会在实践中帮助某人的东西 — 架构理解（"这个逻辑在哪里以及为什么？"）、调试直觉（"什么会导致这种症状？"）和决策制定（"这里的权衡是什么？"）。如果一个概念不会帮助某人调试问题、指导 AI 助手或做出架构决策，它就不值得测验。

@@ -1,21 +1,21 @@
-# Design System Reference
+# 设计系统参考
 
-Complete CSS design tokens for the course. Copy this entire `:root` block into the course HTML and adapt the accent color to suit the project's personality.
+课程的完整 CSS 设计令牌。将整个 `:root` 块复制到课程 HTML 中，并根据项目的个性调整强调色。
 
-## Table of Contents
-1. [Color Palette](#color-palette)
-2. [Typography](#typography)
-3. [Spacing & Layout](#spacing--layout)
-4. [Shadows & Depth](#shadows--depth)
-5. [Animations & Transitions](#animations--transitions)
-6. [Navigation & Progress](#navigation--progress)
-7. [Module Structure](#module-structure)
-8. [Responsive Breakpoints](#responsive-breakpoints)
-9. [Scrollbar & Background](#scrollbar--background)
+## 目录
+1. [调色板](#color-palette)
+2. [排版](#typography)
+3. [间距和布局](#spacing--layout)
+4. [阴影和深度](#shadows--depth)
+5. [动画和过渡](#animations--transitions)
+6. [导航和进度](#navigation--progress)
+7. [模块结构](#module-structure)
+8. [响应式断点](#responsive-breakpoints)
+9. [滚动条和背景](#scrollbar--background)
 
 ---
 
-## Color Palette
+## 调色板
 
 ```css
 :root {

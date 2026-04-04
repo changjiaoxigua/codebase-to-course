@@ -1,20 +1,20 @@
 /**
- * CODEBASE-TO-COURSE — COMPLETE JS ENGINE
- * Copy this file verbatim into the course output directory.
- * Never regenerate it. It handles all interactivity generically.
+ * CODEBASE-TO-COURSE — 完整 JS 引擎
+ * 将此文件逐字复制到课程输出目录。
+ * 永远不要重新生成它。它通用处理所有交互。
  *
- * Engines included:
- *  - Navigation & progress bar
- *  - Scroll-triggered reveal animations
- *  - Keyboard navigation
- *  - Glossary tooltips
- *  - Quiz (multiple-choice & scenario)
- *  - Drag-and-drop matching
- *  - Group chat animation
- *  - Data flow / message flow animation
- *  - Architecture diagram
- *  - "Spot the bug" challenge
- *  - Layer toggle
+ * 包含的引擎：
+ *  - 导航和进度条
+ *  - 滚动触发的显示动画
+ *  - 键盘导航
+ *  - 术语表工具提示
+ *  - 测验（多选和场景）
+ *  - 拖放匹配
+ *  - 群聊动画
+ *  - 数据流 / 消息流动画
+ *  - 架构图
+ *  - "找错"挑战
+ *  - 层切换
  */
 (function () {
   'use strict';
@@ -182,7 +182,7 @@
       const wrongExp  = q.dataset.explanationWrong  || '';
 
       if (!selected) {
-        feedback.textContent = 'Pick an answer first!';
+        feedback.textContent = '请先选择一个答案！';
         feedback.className = 'quiz-feedback show warning';
         return;
       }
@@ -190,13 +190,13 @@
 
       if (selected.dataset.value === correct) {
         selected.classList.add('correct');
-        feedback.innerHTML = '<strong>Exactly!</strong> ' + rightExp;
+        feedback.innerHTML = '<strong>完全正确！</strong> ' + rightExp;
         feedback.className = 'quiz-feedback show success';
       } else {
         selected.classList.add('incorrect');
         const correctBtn = $(`.quiz-option[data-value="${correct}"]`, q);
         if (correctBtn) correctBtn.classList.add('correct');
-        feedback.innerHTML = '<strong>Not quite.</strong> ' + wrongExp;
+        feedback.innerHTML = '<strong>不太对。</strong> ' + wrongExp;
         feedback.className = 'quiz-feedback show error';
       }
     });
@@ -303,7 +303,7 @@
     const container = $('#' + containerId);
     if (!container) return;
     $$('.dnd-zone-target', container).forEach(t => {
-      t.textContent = 'Drop here';
+      t.textContent = '拖放到这里';
       delete t.dataset.placed;
       t.classList.remove('correct-placed', 'incorrect-placed');
     });
@@ -395,7 +395,7 @@
     let step = 0;
 
     function updateProgress() {
-      if (progressEl) progressEl.textContent = 'Step ' + step + ' / ' + stepsData.length;
+      if (progressEl) progressEl.textContent = '步骤 ' + step + ' / ' + stepsData.length;
     }
 
     function animatePacket(fromId, toId) {
@@ -438,7 +438,7 @@
     function reset() {
       step = 0;
       $$('.flow-actor', containerEl).forEach(a => a.classList.remove('active'));
-      if (labelEl) labelEl.textContent = 'Click "Next Step" to begin';
+      if (labelEl) labelEl.textContent = '点击"下一步"开始';
       if (packet)  packet.style.display = 'none';
       updateProgress();
     }
@@ -470,12 +470,12 @@
     const feedback  = $('.bug-feedback', challenge);
     if (isCorrect) {
       el.classList.add('correct');
-      feedback.innerHTML  = '<strong>Found it!</strong> ' + (el.dataset.explanation || '');
+      feedback.innerHTML  = '<strong>找到了！</strong> ' + (el.dataset.explanation || '');
       feedback.className  = 'bug-feedback show success';
       $$('.bug-line', challenge).forEach(l => l.style.pointerEvents = 'none');
     } else {
       el.classList.add('incorrect');
-      feedback.innerHTML  = (el.dataset.hint || 'Not this line — keep looking...');
+      feedback.innerHTML  = (el.dataset.hint || '不是这一行，继续找...');
       feedback.className  = 'bug-feedback show error';
       setTimeout(() => {
         el.classList.remove('incorrect');

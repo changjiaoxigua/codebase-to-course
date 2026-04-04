@@ -1,33 +1,33 @@
-# Interactive Elements Reference
+# 交互元素参考
 
-Implementation patterns for every interactive element type used in courses. Pick the elements that best serve each module's teaching goal.
+课程中使用的每种交互元素类型的实现模式。选择最适合每个模块教学目标的元素。
 
-> **Architecture note:** All CSS and JavaScript for these elements live in `references/styles.css` and `references/main.js`, which are copied verbatim into every course directory. When writing module HTML files, use only the HTML patterns below — do **not** inline `<style>` or `<script>` tags for these elements. The engines in `main.js` auto-initialize on page load by scanning for the relevant class names and `data-*` attributes described here.
+> **架构说明：** 这些元素的所有 CSS 和 JavaScript 都位于 `references/styles.css` 和 `references/main.js` 中，它们被逐字复制到每个课程目录。编写模块 HTML 文件时，仅使用下面的 HTML 模式 — 不要为这些元素内联 `<style>` 或 `<script>` 标签。`main.js` 中的引擎通过扫描此处描述的相关类名和 `data-*` 属性在页面加载时自动初始化。
 
-## Table of Contents
-1. [Code ↔ English Translation Blocks](#code--english-translation-blocks)
-2. [Multiple-Choice Quizzes](#multiple-choice-quizzes)
-3. [Drag-and-Drop Matching](#drag-and-drop-matching)
-4. [Group Chat Animation](#group-chat-animation)
-5. [Message Flow / Data Flow Animation](#message-flow--data-flow-animation)
-6. [Interactive Architecture Diagram](#interactive-architecture-diagram)
-7. [Layer Toggle Demo](#layer-toggle-demo)
-8. ["Spot the Bug" Challenge](#spot-the-bug-challenge)
-9. [Scenario Quiz](#scenario-quiz)
-10. [Callout Boxes](#callout-boxes)
-11. [Pattern/Feature Cards](#patternfeature-cards)
-12. [Flow Diagrams](#flow-diagrams)
-13. [Permission/Config Badges](#permissionconfig-badges)
-14. [Glossary Tooltips](#glossary-tooltips)
-15. [Visual File Tree](#visual-file-tree)
-16. [Icon-Label Rows](#icon-label-rows)
-17. [Numbered Step Cards](#numbered-step-cards)
+## 目录
+1. [代码 ↔ 英语翻译块](#code--english-translation-blocks)
+2. [多选测验](#multiple-choice-quizzes)
+3. [拖放匹配](#drag-and-drop-matching)
+4. [群聊动画](#group-chat-animation)
+5. [消息流 / 数据流动画](#message-flow--data-flow-animation)
+6. [交互式架构图](#interactive-architecture-diagram)
+7. [层切换演示](#layer-toggle-demo)
+8. ["找错"挑战](#spot-the-bug-challenge)
+9. [场景测验](#scenario-quiz)
+10. [标注框](#callout-boxes)
+11. [模式/功能卡片](#patternfeature-cards)
+12. [流程图](#flow-diagrams)
+13. [权限/配置徽章](#permissionconfig-badges)
+14. [术语表工具提示](#glossary-tooltips)
+15. [可视化文件树](#visual-file-tree)
+16. [图标-标签行](#icon-label-rows)
+17. [编号步骤卡片](#numbered-step-cards)
 
 ---
 
-## Code ↔ English Translation Blocks
+## 代码 ↔ 英语翻译块
 
-The most important teaching element. Shows real code from the project on the left and a plain English translation on the right, line by line.
+最重要的教学元素。左侧显示项目中的真实代码，右侧显示逐行的通俗英语翻译。
 
 **HTML:**
 ```html

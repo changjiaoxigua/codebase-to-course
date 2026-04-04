@@ -1,11 +1,11 @@
 /* =============================================================
-   CODEBASE-TO-COURSE — COMPLETE DESIGN SYSTEM
-   Copy this file verbatim into the course output directory.
-   Never regenerate it — customize only via :root overrides
-   in _base.html (accent color only).
+   CODEBASE-TO-COURSE — 完整设计系统
+   将此文件逐字复制到课程输出目录。
+   永远不要重新生成它 — 仅通过 _base.html 中的 :root 覆盖
+   进行自定义（仅强调色）。
    ============================================================= */
 
-/* ── GOOGLE FONTS (loaded via _base.html <head>) ───────────────
+/* ── GOOGLE FONTS（通过 _base.html <head> 加载）───────────────
    Bricolage Grotesque · DM Sans · JetBrains Mono
    ──────────────────────────────────────────────────────────── */
 
@@ -45,8 +45,8 @@
   --color-actor-5:        #2D8B55;
 
   /* FONTS */
-  --font-display: 'Bricolage Grotesque', Georgia, serif;
-  --font-body:    'DM Sans', -apple-system, sans-serif;
+  --font-display: 'Bricolage Grotesque', Georgia, "PingFang SC", "Microsoft YaHei", serif;
+  --font-body:    'DM Sans', -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
   --font-mono:    'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
 
   /* TYPE SCALE */

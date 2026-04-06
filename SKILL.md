@@ -161,18 +161,25 @@ course-name/
 
 阅读 `references/content-philosophy.md` 和 `references/gotchas.md`。然后一次编写一个模块。对于每个模块，编写 `course-name/modules/0N-slug.html`，仅包含 `<section class="module" id="module-N">` 块及其内容。不要包含 `<html>`、`<head>`、`<body>`、`<style>` 或 `<script>` 标签。
 
-阅读 `references/interactive-elements.md` 了解每种交互元素类型的 HTML 模式。阅读 `references/design-system.md` 了解视觉约定。
+**按需阅读组件模板** — 根据 `references/components/index.md` 中的索引，只读取模块需要的组件文件：
+- 代码翻译：`components/translation.html`
+- 测验：`components/quiz.html` 或 `components/quiz-scenario.html`
+- 群聊：`components/chat.html`
+- 数据流：`components/flow.html`
+- 其他元素按需读取
+
+阅读 `references/design-system.md` 了解视觉约定。
 
 #### 并行路径（复杂代码库）
 
 将模块分派给子代理，每批最多 3 个。每个代理接收：
 - 其模块简介（来自 `course-name/briefs/`）
 - `references/content-philosophy.md` 和 `references/gotchas.md`
-- 仅简介中列出的 `references/interactive-elements.md` 和 `references/design-system.md` 部分
+- **仅简介中列出的组件模板文件**（从 `references/components/` 按需读取）
 
 每个代理将其模块文件写入 `course-name/modules/`。短模块（3 个屏幕，一个测验）可以配对 — 两个简介给一个代理。
 
-**代理不会接收的内容：** 完整代码库（片段在简介中）、SKILL.md、其他模块的简介或不需要的参考文件部分。
+**代理不会接收的内容：** 完整代码库（片段在简介中）、SKILL.md、其他模块的简介、不需要的组件文件或完整的设计系统文档。
 
 所有代理完成后，在主上下文中进行快速一致性检查：导航点与模块匹配，模块之间的过渡连贯，没有明显的语气转变。
 

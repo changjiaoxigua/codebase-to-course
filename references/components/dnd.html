@@ -1,0 +1,31 @@
+<!-- 拖放匹配 -->
+<!-- 用法：用户将左侧芯片拖到右侧匹配区域 -->
+
+<div class="dnd-container" id="dnd-UNIQUE_ID">
+  <div class="dnd-chips">
+    <div class="dnd-chip" draggable="true" data-answer="actor-a">角色 A</div>
+    <div class="dnd-chip" draggable="true" data-answer="actor-b">角色 B</div>
+    <div class="dnd-chip" draggable="true" data-answer="actor-c">角色 C</div>
+  </div>
+  <div class="dnd-zones">
+    <div class="dnd-zone" data-correct="actor-a">
+      <p class="dnd-zone-label">角色 A 的描述</p>
+      <div class="dnd-zone-target">拖放到这里</div>
+    </div>
+    <div class="dnd-zone" data-correct="actor-b">
+      <p class="dnd-zone-label">角色 B 的描述</p>
+      <div class="dnd-zone-target">拖放到这里</div>
+    </div>
+    <div class="dnd-zone" data-correct="actor-c">
+      <p class="dnd-zone-label">角色 C 的描述</p>
+      <div class="dnd-zone-target">拖放到这里</div>
+    </div>
+  </div>
+  <button class="btn" onclick="checkDnD('dnd-UNIQUE_ID')">检查匹配</button>
+  <button class="btn" onclick="resetDnD('dnd-UNIQUE_ID')">重置</button>
+</div>
+
+<!-- 注意：
+- dnd-chip 的 data-answer 必须与 dnd-zone 的 data-correct 匹配
+- 支持鼠标和触摸操作
+-->

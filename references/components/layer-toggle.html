@@ -1,0 +1,31 @@
+<!-- 层切换演示 -->
+<!-- 用法：展示不同层（HTML/CSS/JS）如何叠加 -->
+
+<div class="layer-demo">
+  <div class="layer-tabs">
+    <button class="layer-tab active" onclick="showLayer('layer-html', this)">HTML</button>
+    <button class="layer-tab" onclick="showLayer('layer-css', this)">+ CSS</button>
+    <button class="layer-tab" onclick="showLayer('layer-js', this)">+ JS</button>
+  </div>
+  <div class="layer-viewport">
+    <div class="layer" id="layer-html" style="display:block">
+      <!-- 原始未样式化版本 -->
+      <h1>标题</h1>
+      <p>这是纯 HTML，没有任何样式。</p>
+      <button>点击我</button>
+    </div>
+    <div class="layer" id="layer-css" style="display:none">
+      <!-- 样式化版本 -->
+      <h1 style="color: var(--color-accent)">标题</h1>
+      <p style="font-size: 1.1rem; line-height: 1.6">添加了 CSS 样式。</p>
+      <button style="background: var(--color-accent); color: white; padding: 0.5rem 1rem; border: none; border-radius: 8px">点击我</button>
+    </div>
+    <div class="layer" id="layer-js" style="display:none">
+      <!-- 交互版本 -->
+      <h1 style="color: var(--color-accent)">标题</h1>
+      <p style="font-size: 1.1rem; line-height: 1.6">添加了 CSS 样式。</p>
+      <button style="background: var(--color-accent); color: white; padding: 0.5rem 1rem; border: none; border-radius: 8px" onclick="alert('你点击了！')">点击我</button>
+    </div>
+  </div>
+  <p class="layer-description" id="layer-desc">这是原始 HTML 结构...</p>
+</div>

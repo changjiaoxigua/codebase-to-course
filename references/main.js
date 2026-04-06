@@ -495,4 +495,115 @@
     btn.classList.add('active');
   };
 
+  /* ── DATA-DRIVEN RENDERERS ─────────────────────────────────── */
+  
+  /**
+   * renderChat - 数据驱动的群聊渲染器
+   * @param {string} containerId - 容器元素 ID
+   * @param {Array} messages - 消息数组 [{sender, name, text, color}]
+   * @param {Object} options - 可选配置 {autoInit: true}
+   * 
+   * 示例：
+   * renderChat('chat-module2', [
+   *   { sender: 'frontend', name: '前端', text: '我需要数据...', color: 'var(--color-actor-1)' },
+   *   { sender: 'backend', name: '后端', text: '好的，我来处理...', color: 'var(--color-actor-2)' }
+   * ]);
+   */
+  window.renderChat = function(containerId, messages, options) {
+    options = options || {};
+    const container = $('#' + containerId);
+    if (!container || !messages || !messages.length) return;
+    
+    const actors = {};
+    messages.forEach((msg, i) => {
+      if (!actors[msg.sender]) {
+        actors[msg.sender] = {
+          initial: msg.name ? msg.name.charAt(0) : msg.sender.charAt(0).toUpperCase(),
+          color: msg.color || 'var(--color-accent)'
+        };
+      }
+    });
+    
+    let html = '<div class="chat-messages">';
+    messages.forEach((msg, i) => {
+      const actor = actors[msg.sender];
+      html += `
+        <div class="chat-message" data-msg="${i}" data-sender="${msg.sender}" style="display:none">
+          <div class="chat-avatar" style="background: ${actor.color}">${actor.initial}</div>
+          <div class="chat-bubble">
+            <span class="chat-sender" style="color: ${actor.color}">${msg.name || msg.sender}</span>
+            <p>${msg.text}</p>
+          </div>
+        </div>`;
+    });
+    html += '</div>';
+    
+    html += `
+      <div class="chat-typing" id="${containerId}-typing" style="display:none">
+        <div class="chat-avatar" id="${containerId}-typing-avatar">?</div>
+        <div class="chat-typing-dots">
+          <span class="typing-dot"></span>
+          <span class="typing-dot"></span>
+          <span class="typing-dot"></span>
+        </div>
+      </div>
+      <div class="chat-controls">
+        <button class="btn chat-next-btn">下一条消息</button>
+        <button class="btn chat-all-btn">播放全部</button>
+        <button class="btn chat-reset-btn">重播</button>
+        <span class="chat-progress"></span>
+      </div>`;
+    
+    container.innerHTML = html;
+    container.classList.add('chat-window');
+    
+    if (options.autoInit !== false) {
+      initChat(container);
+    }
+  };
+
+  /**
+   * renderFlow - 数据驱动的数据流渲染器
+   * @param {string} containerId - 容器元素 ID
+   * @param {Array} actors - 角色数组 [{id, name, icon}]
+   * @param {Array} steps - 步骤数组 [{highlight, label, packet, from, to}]
+   * 
+   * 示例：
+   * renderFlow('flow-module3', 
+   *   [{id: 'actor-1', name: '前端', icon: '前'},
+   *    {id: 'actor-2', name: '后端', icon: '后'}],
+   *   [{highlight: 'actor-1', label: '用户点击'},
+   *    {highlight: 'actor-1', label: '发送请求', packet: true, from: 'actor-1', to: 'actor-2'}]
+   * );
+   */
+  window.renderFlow = function(containerId, actors, steps) {
+    const container = $('#' + containerId);
+    if (!container || !actors || !actors.length) return;
+    
+    let html = '<div class="flow-actors">';
+    actors.forEach(actor => {
+      html += `
+        <div class="flow-actor" id="flow-${actor.id}">
+          <div class="flow-actor-icon">${actor.icon || actor.name.charAt(0)}</div>
+          <span>${actor.name}</span>
+        </div>`;
+    });
+    html += '</div>';
+    
+    html += `
+      <div class="flow-packet" id="flow-packet"></div>
+      <div class="flow-step-label" id="flow-label">点击"下一步"开始</div>
+      <div class="flow-controls">
+        <button class="btn flow-next-btn">下一步</button>
+        <button class="btn flow-reset-btn">重新开始</button>
+        <span class="flow-progress"></span>
+      </div>`;
+    
+    container.innerHTML = html;
+    container.classList.add('flow-animation');
+    container.dataset.steps = JSON.stringify(steps);
+    
+    initFlow(container);
+  };
+
 })();

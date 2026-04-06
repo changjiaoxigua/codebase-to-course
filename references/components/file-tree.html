@@ -1,0 +1,31 @@
+<!-- 可视化文件树 -->
+<!-- 用法：替代段落列表"这个文件夹做 X，那个文件夹做 Y" -->
+
+<div class="file-tree">
+  <div class="ft-folder open">
+    <span class="ft-name">app/</span>
+    <span class="ft-desc">页面和 API 路由</span>
+    <div class="ft-children">
+      <div class="ft-folder">
+        <span class="ft-name">api/</span>
+        <span class="ft-desc">前端调用的后端端点</span>
+      </div>
+      <div class="ft-file">
+        <span class="ft-name">layout.tsx</span>
+        <span class="ft-desc">包裹每个页面的外壳</span>
+      </div>
+      <div class="ft-file">
+        <span class="ft-name">page.tsx</span>
+        <span class="ft-desc">主页组件</span>
+      </div>
+    </div>
+  </div>
+  <div class="ft-folder">
+    <span class="ft-name">components/</span>
+    <span class="ft-desc">可复用的 UI 构建块</span>
+  </div>
+  <div class="ft-folder">
+    <span class="ft-name">lib/</span>
+    <span class="ft-desc">共享逻辑和工具函数</span>
+  </div>
+</div>

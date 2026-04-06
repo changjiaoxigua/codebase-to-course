@@ -1,0 +1,34 @@
+<!-- 多选测验 -->
+<!-- 用法：复制并替换 QUESTION、OPTIONS、CORRECT、EXPLANATION 占位符 -->
+
+<div class="quiz-container" id="quiz-UNIQUE_ID">
+  <div class="quiz-question-block"
+       data-correct="option-b"
+       data-explanation-right="完全正确！因为 X 负责此架构中的 Y。"
+       data-explanation-wrong="不太对。想想 Y 在代码库中的位置...">
+    <h3 class="quiz-question">问题文本？</h3>
+    <div class="quiz-options">
+      <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+        <div class="quiz-option-radio"></div>
+        <span>答案 A</span>
+      </button>
+      <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+        <div class="quiz-option-radio"></div>
+        <span>答案 B（正确）</span>
+      </button>
+      <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+        <div class="quiz-option-radio"></div>
+        <span>答案 C</span>
+      </button>
+    </div>
+    <div class="quiz-feedback"></div>
+  </div>
+  <button class="quiz-check-btn" onclick="checkQuiz('quiz-UNIQUE_ID')">检查答案</button>
+  <button class="quiz-reset-btn" onclick="resetQuiz('quiz-UNIQUE_ID')">重试</button>
+</div>
+
+<!-- 注意：
+- UNIQUE_ID 必须唯一，如 quiz-module1、quiz-module2-q2
+- data-correct 是正确选项的 data-value
+- data-explanation-right/wrong 是答题后显示的解释
+-->

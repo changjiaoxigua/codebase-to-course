@@ -1,0 +1,35 @@
+<!-- 场景测验 -->
+<!-- 用法：与多选测验相同，但添加场景上下文 -->
+
+<div class="scenario-block">
+  <div class="scenario-context">
+    <span class="scenario-label">场景</span>
+    <p>你的应用处理一个 3 小时的播客转录。API 有 16,000 token 限制。你会怎么做？</p>
+  </div>
+  
+  <div class="quiz-container" id="quiz-scenario-UNIQUE_ID">
+    <div class="quiz-question-block"
+         data-correct="option-b"
+         data-explanation-right="正确！分块处理是处理大型输入的标准模式。"
+         data-explanation-wrong="再想想。关键约束是 token 限制...">
+      <h3 class="quiz-question">高级工程师会怎么做？</h3>
+      <div class="quiz-options">
+        <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+          <div class="quiz-option-radio"></div>
+          <span>直接发送整个转录，希望 API 能处理</span>
+        </button>
+        <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+          <div class="quiz-option-radio"></div>
+          <span>将转录分成多个块，逐个处理</span>
+        </button>
+        <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+          <div class="quiz-option-radio"></div>
+          <span>要求用户上传更短的文件</span>
+        </button>
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>
+    <button class="quiz-check-btn" onclick="checkQuiz('quiz-scenario-UNIQUE_ID')">检查答案</button>
+    <button class="quiz-reset-btn" onclick="resetQuiz('quiz-scenario-UNIQUE_ID')">重试</button>
+  </div>
+</div>

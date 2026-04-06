@@ -1,0 +1,43 @@
+<!-- 交互式架构图 -->
+<!-- 用法：点击组件显示描述 -->
+
+<div class="arch-diagram">
+  <div class="arch-zone arch-zone-browser">
+    <h4 class="arch-zone-label">浏览器</h4>
+    <div class="arch-component" data-desc="将 UI 注入网页，读取 DOM，捕获用户操作"
+         onclick="showArchDesc(this)">
+      <div class="arch-icon">📄</div>
+      <span>内容脚本</span>
+    </div>
+    <div class="arch-component" data-desc="管理扩展弹窗的 UI 和状态"
+         onclick="showArchDesc(this)">
+      <div class="arch-icon">🎯</div>
+      <span>弹窗</span>
+    </div>
+  </div>
+  
+  <div class="arch-zone arch-zone-extension">
+    <h4 class="arch-zone-label">扩展后台</h4>
+    <div class="arch-component" data-desc="处理 API 调用、存储和跨组件通信"
+         onclick="showArchDesc(this)">
+      <div class="arch-icon">⚙️</div>
+      <span>后台服务</span>
+    </div>
+  </div>
+  
+  <div class="arch-zone arch-zone-external">
+    <h4 class="arch-zone-label">外部服务</h4>
+    <div class="arch-component" data-desc="AI 模型 API，处理文本分析和摘要"
+         onclick="showArchDesc(this)">
+      <div class="arch-icon">🤖</div>
+      <span>AI API</span>
+    </div>
+  </div>
+  
+  <div class="arch-description" id="arch-desc">点击任意组件了解其功能</div>
+</div>
+
+<!-- 注意：
+- data-desc 是点击后显示的描述
+- 使用 arch-zone-* 类区分不同区域
+-->

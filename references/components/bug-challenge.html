@@ -1,0 +1,36 @@
+<!-- "找错"挑战 -->
+<!-- 用法：展示有 bug 的代码，用户点击错误行 -->
+
+<div class="bug-challenge">
+  <h3>找出这段代码中的 bug：</h3>
+  <div class="bug-code">
+    <div class="bug-line" data-line="1" onclick="checkBugLine(this, false)">
+      <span class="line-num">1</span>
+      <code>chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {</code>
+    </div>
+    <div class="bug-line" data-line="2" onclick="checkBugLine(this, false)">
+      <span class="line-num">2</span>
+      <code>  if (msg.action === 'fetchData') {</code>
+    </div>
+    <div class="bug-line bug-target" data-line="3" onclick="checkBugLine(this, true)" data-explanation="监听器使用了异步操作（fetch）但没有返回 true。Chrome 会在响应发送之前关闭消息通道。修复：在末尾添加 <code>return true;</code>">
+      <span class="line-num">3</span>
+      <code>    fetch(url).then(r => r.json()).then(data => sendResponse(data));</code>
+    </div>
+    <div class="bug-line" data-line="4" onclick="checkBugLine(this, false)">
+      <span class="line-num">4</span>
+      <code>  }</code>
+    </div>
+    <div class="bug-line" data-line="5" onclick="checkBugLine(this, false)">
+      <span class="line-num">5</span>
+      <code>});</code>
+    </div>
+  </div>
+  <div class="bug-feedback" id="bug-feedback"></div>
+</div>
+
+<!-- 注意：
+- bug-target 类标记正确的行
+- onclick="checkBugLine(this, true)" 表示这是正确答案
+- data-explanation 是找到 bug 后显示的解释
+- data-hint 是点击错误行时显示的提示
+-->

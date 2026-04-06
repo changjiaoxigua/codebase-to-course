@@ -37,7 +37,7 @@
 
 仅列出编写代理需要的部分 — 不是整个文件。
 
-- `references/interactive-elements.md` → [部分名称，例如，"多选测验"、"群聊动画"]
+- `references/components/` → [需要的组件文件，例如，"quiz.html"、"chat.html"、"flow.html"]
 - `references/design-system.md` → [仅当简介中需要特定令牌时]
 - `references/content-philosophy.md` → [始终包含 — 代理需要内容规则]
 - `references/gotchas.md` → [始终包含 — 代理需要检查清单]

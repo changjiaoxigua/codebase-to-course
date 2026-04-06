@@ -1,0 +1,42 @@
+<!-- 数据流 / 消息流动画 -->
+<!-- 用法：逐步展示数据在组件间的流动 -->
+
+<div class="flow-animation" data-steps='[
+  {"highlight":"flow-actor-1","label":"用户点击按钮"},
+  {"highlight":"flow-actor-1","label":"前端发送请求","packet":true,"from":"actor-1","to":"actor-2"},
+  {"highlight":"flow-actor-2","label":"后端调用数据库","packet":true,"from":"actor-2","to":"actor-3"},
+  {"highlight":"flow-actor-3","label":"数据库返回结果","packet":true,"from":"actor-3","to":"actor-2"},
+  {"highlight":"flow-actor-2","label":"后端返回数据给前端","packet":true,"from":"actor-2","to":"actor-1"}
+]'>
+  <div class="flow-actors">
+    <div class="flow-actor" id="flow-actor-1">
+      <div class="flow-actor-icon">前</div>
+      <span>前端</span>
+    </div>
+    <div class="flow-actor" id="flow-actor-2">
+      <div class="flow-actor-icon">后</div>
+      <span>后端</span>
+    </div>
+    <div class="flow-actor" id="flow-actor-3">
+      <div class="flow-actor-icon">数</div>
+      <span>数据库</span>
+    </div>
+  </div>
+
+  <div class="flow-packet" id="flow-packet"></div>
+  <div class="flow-step-label" id="flow-label">点击"下一步"开始</div>
+
+  <div class="flow-controls">
+    <button class="btn flow-next-btn">下一步</button>
+    <button class="btn flow-reset-btn">重新开始</button>
+    <span class="flow-progress"></span>
+  </div>
+</div>
+
+<!-- 注意：
+- data-steps 使用单引号包裹 JSON（避免与内部双引号冲突）
+- ⚠️ 步骤标签中不能有单引号，会导致 JSON 解析失败
+- actor ID 必须是 flow-actor-N 格式
+- packet: true 表示显示数据包动画
+- from/to 使用 actor-N 格式（不带 flow- 前缀）
+-->

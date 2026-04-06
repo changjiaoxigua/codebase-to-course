@@ -1,0 +1,29 @@
+<!-- 代码 ↔ 中文翻译块 -->
+<!-- 用法：左侧代码，右侧逐行中文翻译 -->
+
+<div class="translation-block animate-in">
+  <div class="translation-code">
+    <span class="translation-label">CODE</span>
+    <pre><code>
+<span class="code-line"><span class="code-keyword">const</span> response = <span class="code-keyword">await</span> <span class="code-function">fetch</span>(url, {</span>
+<span class="code-line">  <span class="code-property">method</span>: <span class="code-string">'POST'</span>,</span>
+<span class="code-line">  <span class="code-property">headers</span>: { <span class="code-string">'Authorization'</span>: apiKey }</span>
+<span class="code-line">});</span>
+    </code></pre>
+  </div>
+  <div class="translation-english">
+    <span class="translation-label">中文解释</span>
+    <div class="translation-lines">
+      <p class="tl">向 URL 发送请求并等待响应...</p>
+      <p class="tl">我们正在发送数据（POST），而不仅仅是请求数据（GET）...</p>
+      <p class="tl">包含我们的 API 密钥，让服务器知道我们是谁...</p>
+      <p class="tl">请求设置结束。</p>
+    </div>
+  </div>
+</div>
+
+<!-- 规则：
+- 每行中文对应 1-2 行代码
+- 使用对话式语言，不要技术术语
+- 强调"为什么"而不仅仅是"是什么"
+-->

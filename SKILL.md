@@ -225,4 +225,7 @@ cd course-name && bash build.sh
 - **`references/gotchas.md`** — 常见故障点检查清单。在阶段 3 和阶段 4（审查）期间阅读。
 - **`references/module-brief-template.md`** — 阶段 2.5 模块简介的模板。仅在使用并行路径的复杂代码库阅读。
 - **`references/design-system.md`** — 完整的 CSS 自定义属性、调色板、排版比例、间距系统、阴影、动画、滚动条样式。在阶段 3 编写模块 HTML 时阅读。
-- **`references/interactive-elements.md`** — 每种交互元素的实现模式：拖放测验、多选测验、代码↔英语翻译、群聊动画、消息流可视化、架构图、模式卡片、标注框。在阶段 3 期间阅读相关部分。
+- **`references/components/`** — 交互元素组件模板目录。**按需读取**，不要预先阅读所有文件。
+  - `components/index.md` — 组件索引，快速查看有哪些组件可用
+  - 每个组件一个 `.html` 文件，包含简化的模板和使用说明
+  - 支持数据驱动渲染：`renderChat()` 和 `renderFlow()` 函数可在 `main.js` 中使用

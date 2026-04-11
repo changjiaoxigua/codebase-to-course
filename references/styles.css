@@ -1017,8 +1017,8 @@ p:last-child { margin-bottom: 0; }
 }
 .term-tooltip {
   position: fixed;
-  background: var(--color-bg-code);
-  color: #CDD6F4;
+  background: var(--color-surface);
+  color: var(--color-text);
   padding: var(--space-3) var(--space-4);
   border-radius: var(--radius-sm);
   font-size: var(--text-sm);
@@ -1026,6 +1026,7 @@ p:last-child { margin-bottom: 0; }
   line-height: var(--leading-normal);
   width: max(200px, min(320px, 80vw));
   box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
   pointer-events: none;
   opacity: 0;
   transition: opacity var(--duration-fast);
@@ -1038,14 +1039,14 @@ p:last-child { margin-bottom: 0; }
   left: 50%;
   transform: translateX(-50%);
   border: 6px solid transparent;
-  border-top-color: var(--color-bg-code);
+  border-top-color: var(--color-surface);
 }
 .term-tooltip.visible { opacity: 1; }
 .term-tooltip.flip::after {
   top: auto;
   bottom: 100%;
   border-top-color: transparent;
-  border-bottom-color: var(--color-bg-code);
+  border-bottom-color: var(--color-surface);
 }
 
 /* ── VISUAL FILE TREE ───────────────────────────────────────── */
